@@ -6,7 +6,7 @@
 /*   By: mbazirea <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/10 10:48:34 by mbazirea          #+#    #+#             */
-/*   Updated: 2023/08/10 12:20:46 by mbazirea         ###   ########.fr       */
+/*   Updated: 2023/08/10 13:38:08 by mbazirea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ class PhoneBook
 	private:
 		Contact m_contact[8];
 		int m_index;
+		int m_max_phone;
 };
 
 #endif //PHONEBOOK_HPP
