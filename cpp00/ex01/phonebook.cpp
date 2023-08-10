@@ -6,7 +6,7 @@
 /*   By: mbazirea <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/10 10:43:16 by mbazirea          #+#    #+#             */
-/*   Updated: 2023/08/10 13:38:02 by mbazirea         ###   ########.fr       */
+/*   Updated: 2023/08/10 14:46:25 by mbazirea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,29 +41,49 @@ void	PhoneBook::add(void)
 		this->m_index = 0;
 	else
 		if (this->m_max_phone < 7)
-			this->max_phone += 1;
+			this->m_max_phone += 1;
 		this->m_index += 1;
+}
+
+void	print(std::string tmp)
+{
+	int i(0);
+	int test(0);
+
+	while (i < 9 && tmp[i])
+	{
+		std::cout << tmp[i];
+		i++;
+		if (i == 9)
+			test = 1;
+	}
+	while (i < 10 && !(test = 1 && tmp[9]))
+	{
+		std::cout << " ";
+		i++;
+	}
+	if (test == 1 && tmp[9])
+	{
+		std::cout << ".";
+	}
+	std::cout << "|";
 }
 
 void	PhoneBook::search(void)
 {
-	int	i(0);
 	int x(0);
 	std::string tmp;
 
 	while (x < this->m_max_phone)
 	{
-		std::cout << this->m_index << "         |";
-		tmp = this->m_contact[x]
-		while (i < 9 && tmp[i])
-		{
-			std::cout << this->tmp[i];
-			i++;
-		}
-		while (i < 9)
-		{
-			std::cout << " ";
-		}
+		std::cout << x << "         |";
+		tmp = this->m_contact[x].first_name();
+		print(tmp);
+		tmp = this->m_contact[x].last_name();
+		print(tmp);
+		tmp = this->m_contact[x].nickname();
+		print(tmp);
+		std::cout << std::endl;
 		x++;
 	}
 }

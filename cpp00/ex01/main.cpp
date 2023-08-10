@@ -6,7 +6,7 @@
 /*   By: mbazirea <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/10 11:27:28 by mbazirea          #+#    #+#             */
-/*   Updated: 2023/08/10 12:50:21 by mbazirea         ###   ########.fr       */
+/*   Updated: 2023/08/10 14:26:13 by mbazirea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	main(void)
 		}
 		else if (command == "SEARCH")
 		{
-			std::cout << "search\n";
+			phonebook.search();
 		}
 	}
 	return (0);
