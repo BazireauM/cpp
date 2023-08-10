@@ -6,7 +6,7 @@
 /*   By: mbazirea <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/10 10:48:34 by mbazirea          #+#    #+#             */
-/*   Updated: 2023/08/10 12:06:49 by mbazirea         ###   ########.fr       */
+/*   Updated: 2023/08/10 12:20:46 by mbazirea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ class PhoneBook
 {
 	public:
 		PhoneBook();
-		void	add(Contact contact);
-		void	search(Contact contact);
+		void	add(void);
+		void	search(void);
 	private:
 		Contact m_contact[8];
 		int m_index;

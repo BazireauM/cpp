@@ -6,7 +6,7 @@
 /*   By: mbazirea <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/10 11:27:28 by mbazirea          #+#    #+#             */
-/*   Updated: 2023/08/10 12:06:53 by mbazirea         ###   ########.fr       */
+/*   Updated: 2023/08/10 12:50:21 by mbazirea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,14 @@
 
 int	main(void)
 {
+	PhoneBook phonebook;
 	std::string command("1");
 	while (command != "EXIT")
 	{
 		std::cin >> command;
 		if (command == "ADD")
 		{
-			std::cout << "add\n";
+			phonebook.add();
 		}
 		else if (command == "SEARCH")
 		{
