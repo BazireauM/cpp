@@ -86,4 +86,29 @@ void	PhoneBook::search(void)
 		std::cout << std::endl;
 		x++;
 	}
+	std::cout << "choose contact index" << std::endl;
+	std::cin >> tmp;
+	while(1)
+	{
+		std::istringstream(tmp) >> x;
+		if (x <= this->m_max_phone && !(x == 0 && tmp != "0"))
+		{
+			tmp = this->m_contact[x].first_name();
+			std::cout << "first Name : " << tmp << std::endl;
+			tmp = this->m_contact[x].last_name();
+			std::cout << "last_name : " << tmp << std::endl;
+			tmp = this->m_contact[x].nickname();
+			std::cout << "nickname : " << tmp << std::endl;
+			tmp = this->m_contact[x].phone_number();
+			std::cout << "phone number : " << tmp << std::endl;
+			tmp = this->m_contact[x].darkest_secret();
+			std::cout << "darkest secret : " << tmp << std::endl;
+			return ;
+		}
+		else
+		{
+			std::cout << "invalid index, choose a valid index" << std::endl;
+			std::cin >> tmp;
+		}
+	}
 }

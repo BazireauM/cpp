@@ -20,13 +20,9 @@ int	main(void)
 	{
 		std::cin >> command;
 		if (command == "ADD")
-		{
 			phonebook.add();
-		}
 		else if (command == "SEARCH")
-		{
 			phonebook.search();
-		}
 	}
 	return (0);
 }
