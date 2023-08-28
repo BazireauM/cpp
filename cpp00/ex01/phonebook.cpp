@@ -40,9 +40,9 @@ void	PhoneBook::add(void)
 	if (this->m_index >= 7)
 		this->m_index = 0;
 	else
-		if (this->m_max_phone < 7)
-			this->m_max_phone += 1;
 		this->m_index += 1;
+	if (this->m_max_phone <= 7)
+			this->m_max_phone += 1;
 }
 
 void	print(std::string tmp)
@@ -74,16 +74,16 @@ void	PhoneBook::search(void)
 	int x(0);
 	std::string tmp;
 
+	if (this->m_max_phone == 0)
+		return ;
 	while (x < this->m_max_phone)
 	{
-		std::cout << x << "         |";
-		tmp = this->m_contact[x].first_name();
-		print(tmp);
-		tmp = this->m_contact[x].last_name();
-		print(tmp);
-		tmp = this->m_contact[x].nickname();
-		print(tmp);
-		std::cout << std::endl;
+		tmp = std::to_string(x);
+		std::cout << std::setw(10) << std::left << (tmp.length() >= 10 ? tmp.substr(0, 9) + "." : tmp) << "|"
+              << std::setw(10) << std::left << (m_contact[x].first_name().length() >= 10 ? m_contact[x].first_name().substr(0, 9) + "." : m_contact[x].first_name()) << "|"
+              << std::setw(10) << std::left << (m_contact[x].last_name().length() >= 10 ? m_contact[x].last_name().substr(0, 9) + "." : m_contact[x].last_name()) << "|"
+              << std::setw(10) << std::left << (m_contact[x].nickname().length() >= 10 ? m_contact[x].nickname().substr(0, 9) + "." : m_contact[x].nickname()) << "|"
+              << std::endl;
 		x++;
 	}
 	std::cout << "choose contact index" << std::endl;
@@ -91,7 +91,7 @@ void	PhoneBook::search(void)
 	while(1)
 	{
 		std::istringstream(tmp) >> x;
-		if (x <= this->m_max_phone && !(x == 0 && tmp != "0"))
+		if (x < this->m_max_phone && !(x == 0 && tmp != "0"))
 		{
 			tmp = this->m_contact[x].first_name();
 			std::cout << "first Name : " << tmp << std::endl;
